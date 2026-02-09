@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:dayflow;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+jwt:
+  secret: ZGF5Zmxvdy1kZXYtc2VjcmV0LWtleS1mb3Itand0LXRva2VuLWdlbmVyYXRpb24tMjAyNA==
+  access-token-expiration: 3600000    # 1 hour
+  refresh-token-expiration: 604800000  # 7 days
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+
+logging:
+  level:
+    com.dayflow.backend: DEBUG
+    org.hibernate.SQL: DEBUG
