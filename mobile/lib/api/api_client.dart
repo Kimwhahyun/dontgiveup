@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiClient {
-  // Android emulator uses 10.0.2.2 to reach host localhost
-  static const String baseUrl = 'http://10.0.2.2:8080/api';
+  // adb reverse tcp:8080 tcp:8080 로 포트포워딩 사용
+  static const String baseUrl = 'http://127.0.0.1:8080/api';
 
   static Future<String?> _getToken() async {
     final prefs = await SharedPreferences.getInstance();

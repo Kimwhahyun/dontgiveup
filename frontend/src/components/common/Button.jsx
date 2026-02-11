@@ -5,6 +5,7 @@ const Button = ({
   fullWidth = false,
   disabled = false,
   style = {},
+  ...rest
 }) => {
   const baseStyle = {
     padding: '12px 24px',
@@ -46,6 +47,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       style={{ ...baseStyle, ...variants[variant], ...style }}
+      {...rest}
     >
       {children}
     </button>
